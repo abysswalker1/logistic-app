@@ -1,0 +1,62 @@
+.application-list {
+  padding: 40px 0;
+  &__head {
+    border-bottom: 1px solid gray;
+  }
+  &__item {
+    margin-bottom: 10px;
+    max-height: 68px;
+    overflow: hidden;
+    &.opened {
+      max-height: 2000px;
+    }
+    &-data {
+      height: 68px;
+      padding: 10px 0;
+      display: flex;
+      gap: 20px; 
+    }
+    &-section {
+      flex: 1;
+    }
+  }
+
+  &__additional {
+    padding-bottom: 40px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  &__zero {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .item-details {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 20px;
+    &__btn {
+      text-decoration: underline;
+    }
+  }
+
+  .item-name {
+    text-align: center;
+  }
+
+  .item-date {
+    text-align: center;
+  }
+
+  .item-status {
+    text-align: end;
+  }
+
+  .item-comment {
+    width: 100%;
+    flex: unset;
+  }
+}

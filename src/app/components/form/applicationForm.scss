@@ -1,0 +1,21 @@
+.application-form {
+  max-width: 600px;
+  &__field-wrap {
+    display: flex;
+    column-gap: 10px;
+  }
+
+  &__field {
+    flex: 1;
+    margin-bottom: 10px;
+    label {
+      margin-bottom: 8px;
+    }
+    input, textarea {
+      width: 100%;
+      border: 1px solid #000;
+      border-radius: 4px;
+      padding: 5px 8px;
+    }
+  }
+}

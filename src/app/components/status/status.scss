@@ -1,0 +1,8 @@
+.application-status {
+  &.completed {
+    color: green;
+  }
+  &.inProgress {
+    color: orange;
+  }
+}

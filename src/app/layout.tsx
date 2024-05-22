@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.scss";
+import './reset.scss';  
+import Header from "./components/header/Header";
+import Head from "next/head";
+import '@gravity-ui/react/dist/index.css';
 
 export const metadata: Metadata = {
   title: "Yeti Crab",
@@ -16,7 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <Head>
+        <link rel="shortcut icon" href='/public/favicon.ico' />
+      </Head>
+
+      <body className="g-root">
+        <Header />
+
         {children}
       </body>
     </html>
