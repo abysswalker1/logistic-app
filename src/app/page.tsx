@@ -1,7 +1,8 @@
-import Image from "next/image";
 import ApplicationForm from "./components/form/ApplicationForm";
 import ApplicationList from "./components/list/ApplicationList";
-import './application.scss';
+
+import '@gravity-ui/uikit/styles/fonts.css';
+import '@gravity-ui/uikit/styles/styles.css';
 
 export default function Home() {
   return (

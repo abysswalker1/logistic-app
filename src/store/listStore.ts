@@ -17,7 +17,7 @@ class ListStore {
         firstName: 'Василий', 
         lastName: 'Иванов', 
         patronym: 'Михайлович',
-        phone: '7 (902) 111 11 11',
+        phone: '89021111111',
         code: '12345',
       },  
       date: {
@@ -34,7 +34,7 @@ class ListStore {
         firstName: 'Иван', 
         lastName: 'Виноградов', 
         patronym: 'Васильевич',
-        phone: '7 (902) 111 11 11',
+        phone: '89021111111',
         code: '12345',
       }, 
       date: {
@@ -51,7 +51,7 @@ class ListStore {
         firstName: 'Владислав', 
         lastName: 'Филиппов', 
         patronym: 'Михайлович',
-        phone: '7 (902) 111 11 11',
+        phone: '89021111111',
         code: '12345',
       }, 
       date: {
@@ -78,10 +78,11 @@ class ListStore {
     const itemToChange = this.list.find(item => item.id === id);
 
     if (itemToChange) {
+      itemToChange.id = uuid();
       itemToChange.userData = values;
       itemToChange.status = 'inProgress';
       itemToChange.date = getCurrentDate();
-    }
+    } 
   }
 
   removeApplication = (id: string) => {

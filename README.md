@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## _REST-API клиентской части веб приложения_
 
-## Getting Started
+### Версия
 
-First, run the development server:
+Текущая версия API клиента - v1.0
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Авторизация
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Некоторые методы api требуют авторизации с правами администратора.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Endpoints
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Список заявок
 
-## Learn More
+**1. Получение всего списка**
+- URL: /api/applications
+- Метод: GET
+- Параметры:
 
-To learn more about Next.js, take a look at the following resources:
+|Имя|Тип|Расположение|Описание|
+|---|---|------------|-----------|
+|Autorization|Beader-token|Headers|Токен авторизации|
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**2. Добавление заявки в таблицу(требует прав администратора)**
+ - URL: /api/applications
+ - Метод: POST
+ - Параметры:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+|Имя|Тип|Расположение|Описание|
+|---|---|------------|-----------|
+|Autorization|Beader-token|Headers|Токен авторизации|
+|application|JSON|body|Данные заявки|
 
-## Deploy on Vercel
+**3. Изменение данных заявки(требует прав администратора)**
+- URL: /api/applications
+- Метод: PUT
+- Параметры:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+|Имя|Тип|Расположение|Описание|
+|---|---|------------|-----------|
+|Autorization|Beader-token|Headers|Токен авторизации|
+|id|string|body|Идентификатор редактируемой заявки|
+|application|JSON|body|Данные заявки|
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**4. Удаление заявки(требует прав администратора)**
+- URL: /api/applications
+- Метод: DELETE
+- Параметры:
+
+|Имя|Тип|Расположение|Описание|
+|---|---|------------|-----------|
+|Autorization|Beader-token|Headers|Токен авторизации|
+|id|string|body|Идентификатор удаляемой заявки|
+
+### Авторизация
+
+ **1. Отправка данных регистрации**
+- URL: /api/login
+- Метод: POST
+- Параметры:
+
+|Имя|Тип|Расположение|Описание|
+|---|---|------------|-----------|
+|data|JSON|body|Данные пользователя|

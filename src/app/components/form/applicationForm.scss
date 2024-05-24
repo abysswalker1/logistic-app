@@ -18,4 +18,9 @@
       padding: 5px 8px;
     }
   }
+
+  &__buttons {
+    display: flex;
+    column-gap: 10px;
+  }
 }

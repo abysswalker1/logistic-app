@@ -7,3 +7,29 @@
 label {
   display: block;
 }
+
+svg {
+  min-width: 16px;
+}
+
+input, textarea {
+  background: rgba(39, 76, 59, 0.1);
+}
+
+.g-root {
+
+}
+
+.g-root.g-root_theme_light {
+  background: var(--g-color-base-positive-light);
+  color: var(--g-color-text-primary);
+}
+
+.yc-button__text {
+  display: flex !important;
+  align-items: center;
+}
+
+.yc-popup__content {
+  background-color: var(--g-color-base-positive-medium-hover);
+}

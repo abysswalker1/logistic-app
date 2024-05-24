@@ -1,0 +1,31 @@
+.details {
+  &-desktop {
+    display: flex;
+    column-gap: 10px;
+  }
+
+  &-mobile {
+    display: none;
+    &__popup {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 798px) {
+    &-desktop {
+      display: none;
+    }
+    &-mobile {
+      display: block;
+      &__popup {
+        display: block;
+        &-btn {
+          margin-right: 10px;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

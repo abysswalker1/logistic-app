@@ -1,23 +1,35 @@
 'use client';
 import profileStore from '@/store/profileStore';
 import { observer } from 'mobx-react-lite';
-import React from 'react';
-import {Avatar, Button} from '@gravity-ui/uikit';
-import PersonWorkerIcon from '@gravity-ui/icons/svgs/person-worker.svg';
-import Image from 'next/image';
+import { FC } from 'react';
+import {PersonWorker} from '@gravity-ui/icons';
+import './header.scss';
+import {Button} from '@gravity-ui/uikit';
 
-const Header = observer(() => {
+import cn from 'classnames';
+
+const Header: FC = observer(() => {
   const {isAdminMode, toggleAdminMode} = profileStore;
+  const view = isAdminMode ? 'normal' : 'outlined'; 
   const handleClick = () => {
     toggleAdminMode(!isAdminMode);
   }
 
   return (
-    <header>
+    <header className='header'>
       <div className="container">
-        <button onClick={() => handleClick()}>
-          <Avatar icon={PersonWorkerIcon}/>
-        </button>
+        <Button 
+          className='header-admin' 
+          onClick={() => handleClick()} 
+          view={view}
+          type='button'
+        >
+          <PersonWorker />
+          admin
+        </Button>
+        <div className={cn('header-logo')}>
+          Expert logistics 
+        </div>
       </div>
     </header>
   );

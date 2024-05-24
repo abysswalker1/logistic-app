@@ -1,11 +1,11 @@
 'use client';
-import React from 'react';
+import {FC} from 'react';
 import listStore from '@/store/listStore';
 import { observer } from 'mobx-react-lite';
 import './applicationList.scss';
 import ListItem from './listItem/ListItem';
 
-const ApplicationList = observer(() => {
+const ApplicationList: FC = observer(() => {
   const list = listStore.list;
 
   if (list.length <= 0) {
@@ -26,15 +26,15 @@ const ApplicationList = observer(() => {
             Дата
           </div>
           <div className="application-list__item-section item-status">
-            Статус заявки
+            Статус
           </div>
           <div className="application-list__item-section item-details">
-            <strong>Кол-во: {list.length}</strong>
+            <p>Кол-во: {list.length}</p>
           </div>
         </div>
       </div>
-      {list.map((item, index) => {
-        return <ListItem application={item} key={'list-item' + index}/>
+      {list.map(item => {
+        return <ListItem application={item} key={'list-item' + item.id}/>
       })}
     </div>
   );

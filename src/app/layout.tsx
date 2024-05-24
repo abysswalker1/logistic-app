@@ -3,7 +3,6 @@ import "./globals.scss";
 import './reset.scss';  
 import Header from "./components/header/Header";
 import Head from "next/head";
-import '@gravity-ui/react/dist/index.css';
 
 export const metadata: Metadata = {
   title: "Yeti Crab",
@@ -18,10 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <link rel="shortcut icon" href='/public/favicon.ico' />
+        <link rel="shortcut icon" href='favicon.ico' />
       </Head>
 
-      <body className="g-root">
+      <body className="g-root g-root_theme_light">
         <Header />
 
         {children}

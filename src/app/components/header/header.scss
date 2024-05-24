@@ -1,0 +1,17 @@
+.header {
+  padding: 15px 0;
+  position: relative;
+
+  &-logo {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+  }
+
+  &-admin {
+    svg {
+      margin-right: 5px;
+    }
+  }
+}
